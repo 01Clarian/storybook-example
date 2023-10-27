@@ -327,8 +327,10 @@ textarea {
 }
 
 .list-item.TASK_ARCHIVED input[type="text"] {
-  color: #a0aec0;
+  color: black;
   text-decoration: line-through;
+  background-color: white;
+  height: 100%;
 }
 
 .list-item:hover {
