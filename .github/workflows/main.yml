@@ -1,0 +1,73 @@
+name: CI/CD
+
+on:
+
+  
+push:
+
+    
+branches: [ main ]
+
+jobs:
+
+  
+build:
+
+    
+runs-on:
+ 
+ubuntu-latest
+
+
+    
+steps:
+
+      
+-
+ 
+uses:
+ 
+actions/checkout@v3
+
+      
+-
+ 
+uses:
+ 
+actions/setup-node@v3
+
+        
+with:
+
+          
+node-version:
+ 
+18
+
+      
+-
+ 
+name:
+ 
+Install
+ 
+dependencies
+
+        
+run:
+ 
+yarn
+ 
+install
+
+      
+-
+ 
+name: Build project
+        run: yarn run build
+
+      - name: Deploy to GitHub Pages
+        uses: actions/github-script@v5
+        with:
+          script: |
+            gh-pages --target main -d dist
