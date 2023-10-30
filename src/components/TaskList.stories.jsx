@@ -15,7 +15,6 @@ export const MockedState = {
     { ...TaskStories.Default.args.task, id: '5', title: 'Task 5' },
     { ...TaskStories.Default.args.task, id: '6', title: 'Task 6' },
     { ...TaskStories.Default.args.task, id: '7', title: 'Task 7' },
-    { ...TaskStories.Default.args.task, id: '7', title: 'Task 8' },
 
   ],
   status: 'idle',
