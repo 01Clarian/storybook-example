@@ -53,6 +53,49 @@ input[type="submit"] {
   -webkit-appearance: button;
 }
 
+.new-task-button {
+
+  display: inline-block;
+  outline: 0;
+  appearance: none;
+  padding: 0px 12px;
+  border: 0px solid transparent;
+  border-radius: 4px;
+  text-decoration: none;
+  margin:5px;
+  cursor: pointer;
+  background-color: rgb(115, 231, 179);
+  box-shadow: rgb(19 170 82 / 40%) 0px 2px 3px;
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  font-weight: 400;
+  height: 36px;
+  transition: all 150ms ease-in-out 0s;
+ 
+}
+
+.new-task-button   :hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(17, 97, 73);
+  box-shadow: rgb(19 170 82 / 40%) 0px 2px 3px, rgb(195 231 202) 0px 0px 0px 3px;
+}
+
+.text_input {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  text-align: center;
+  font-size: 1.2rem;
+	margin-left: 4px;
+  padding: 1.5rem 2rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s;
+}
+
+
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
