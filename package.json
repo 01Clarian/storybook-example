@@ -26,6 +26,8 @@
   },
   "scripts": {
     "dev": "vite",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
@@ -49,6 +51,7 @@
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
     "chromatic": "^7.5.4",
+    "gh-pages": "^6.0.0",
     "msw": "^1.2.1",
     "msw-storybook-addon": "^1.8.0",
     "prop-types": "^15.8.1",
@@ -60,6 +63,6 @@
     "workerDirectory": "public"
   },
   "readme": "ERROR: No README data found!",
-  "homepage": "https://github.com/chromaui/intro-storybook-react-template#readme",
+  "homepage": "https://01clarian.github.io/storybook-example",
   "_id": "intro-storybook-react-template@0.2.0"
 }
