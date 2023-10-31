@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Task({ task: { id, title, state }, onArchiveTask, onPinTask }) {
+export default function Task({ task: { id, title, state }, onArchiveTask, onUnArchiveTask, onPinTask }) {
   return (
     <div className={`list-item ${state}`}>
       <label
@@ -10,14 +10,14 @@ export default function Task({ task: { id, title, state }, onArchiveTask, onPinT
       >
         <input
           type="checkbox"
-          disabled={true}
+          //disabled={true}
           name="checked"
           id={`archiveTask-${id}`}
           checked={state === "TASK_ARCHIVED"}
         />
         <span
           className="checkbox-custom"
-          onClick={() => onArchiveTask(id)}
+          onClick={() => state === "TASK_INBOX" || state === "TASK_PINNED" ? onArchiveTask(id) : onUnArchiveTask(id)}
         />
       </label>
 
