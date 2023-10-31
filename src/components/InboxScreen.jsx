@@ -6,6 +6,8 @@ import { fetchTasks } from '../lib/store';
 
 import TaskList from './TaskList';
 
+import {AddNewTask} from './AddNewTask';
+
 export default function InboxScreen() {
   const dispatch = useDispatch();
   // We're retrieving the error field from our updated store
@@ -30,6 +32,7 @@ export default function InboxScreen() {
     <div className="page lists-show">
       <nav>
         <h1 className="title-page">Taskbox App</h1>
+        <AddNewTask />
       </nav>
       <TaskList />
     </div>

@@ -52,6 +52,22 @@ import {
           state.tasks[task].state = newTaskState;
         }
       },
+      addNewTask: (state, action) => {
+        const { newTask } = action.payload;
+      
+        // Create a new copy of the tasks array
+        const newTasks = [...state.tasks];
+      
+        // Push the new task into the new array
+        newTasks.push({
+          id: state.tasks.length + 1,
+          title: newTask,
+          state: 'TASK_INBOX',
+        });
+      
+        // Assign the new array to the tasks state variable
+        state.tasks = newTasks;
+      },
     },
     /*
      * Extends the reducer for the async actions
@@ -80,6 +96,7 @@ import {
   
   // The actions contained in the slice are exported for usage in our components
   export const { updateTaskState } = TasksSlice.actions;
+  export const { addNewTask } = TasksSlice.actions;
   
   /*
    * Our app's store configuration goes here.
