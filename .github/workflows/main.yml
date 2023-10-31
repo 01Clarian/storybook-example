@@ -1,73 +1,32 @@
-name: CI/CD
+
+name: "CI/CD"
 
 on:
-
-  
-push:
-
-    
-branches: [ main ]
+  push:
+    branches:
+      - main
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
 
-  
-build:
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    
-runs-on:
- 
-ubuntu-latest
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
+      - name: Install dependencies
+        run: yarn install
 
-    
-steps:
-
-      
--
- 
-uses:
- 
-actions/checkout@v3
-
-      
--
- 
-uses:
- 
-actions/setup-node@v3
-
-        
-with:
-
-          
-node-version:
- 
-18
-
-      
--
- 
-name:
- 
-Install
- 
-dependencies
-
-        
-run:
- 
-yarn
- 
-install
-
-      
--
- 
-name: Build project
+      - name: Build project
         run: yarn run build
 
       - name: Deploy to GitHub Pages
-        uses: actions/github-script@v5
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          script: |
-            gh-pages --target main -d dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
