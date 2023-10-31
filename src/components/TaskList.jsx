@@ -28,9 +28,18 @@ export default function TaskList() {
     dispatch(updateTaskState({ id: value, newTaskState: 'TASK_PINNED' }));
   };
   const archiveTask = (value) => {
+    
     // We're dispatching the Archive event back to our store
-    dispatch(updateTaskState({ id: value, newTaskState: 'TASK_ARCHIVED' }));
+    dispatch(updateTaskState({ id: value, newTaskState:'TASK_ARCHIVED' }));
   };
+ 
+  const unArchiveTask = (value) => {
+    
+    // We're dispatching the Archive event back to our store
+    dispatch(updateTaskState({ id: value, newTaskState:'TASK_INBOX' }));
+  };
+  
+
   const LoadingRow = (
     <div className="loading-item">
       <span className="glow-checkbox" />
@@ -71,6 +80,7 @@ export default function TaskList() {
           task={task}
           onPinTask={(task) => pinTask(task)}
           onArchiveTask={(task) => archiveTask(task)}
+          onUnArchiveTask={(task) => unArchiveTask(task)}
         />
       ))}
     </div>
